@@ -1,0 +1,13 @@
+type TodoItem {
+    id: ID!
+    description: String!
+    title: String!
+}
+
+type Query {
+    findAll: [TodoItem]!
+}
+
+type Mutation {
+    createTask(description: String!, title: String!): TodoItem!
+}
