@@ -29,6 +29,9 @@ dependencies {
 
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
+
 }
 
 tasks.withType<KotlinCompile> {
@@ -40,4 +43,13 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+
+sourceSets {
+    test {
+        kotlin {
+            srcDirs("src/test/kotlin", "src/test/kotlin/unit")
+        }
+    }
 }
