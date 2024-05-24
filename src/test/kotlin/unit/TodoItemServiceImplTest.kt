@@ -46,4 +46,16 @@ class TodoItemServiceImplTest {
         assertEquals(result, expectedItems)
         verify(todoItemRepository, times(1)).findAll()
     }
+
+    @Test
+    fun deleteItem_ItemDeleted() {
+        // Arrange
+        val testItem = TodoItem(title = "TestItem", description =  "Description", id = 1)
+
+        // Act
+        todoItemServiceImpl.deleteTask(testItem.id)
+
+        // Assert
+        verify(todoItemRepository, times(1)).deleteById(testItem.id)
+    }
 }

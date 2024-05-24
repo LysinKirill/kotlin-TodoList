@@ -14,4 +14,6 @@ class TodoItemServiceImpl(private val todoItemRepository: TodoItemRepository) : 
         val todoItem = TodoItem(description = desc, title = title)
         return todoItemRepository.save(todoItem)
     }
+
+    override fun deleteTask(id: Long) = todoItemRepository.deleteById(id)
 }
